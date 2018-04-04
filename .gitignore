@@ -1,0 +1,15 @@
+*.log
+*.aux
+*.bbl
+*.blg
+*.synctex.gz
+*.nav
+*.snm
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.DS_Store
+presentation.pdf
+_region_.tex
+auto
