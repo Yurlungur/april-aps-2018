@@ -1,5 +1,5 @@
 \pdfobjcompresslevel=0
-\documentclass[]{beamer}
+\documentclass[9pt,usepdftitle=false,aspectratio=169]{beamer}
 \mode<presentation>
 
 % Settings
@@ -243,25 +243,26 @@
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \begin{center}
-        \underline{\Large\color{blue}The Basic Idea}\\
-        \vspace{1.cm}
-        \begin{Large}
+        \underline{\huge\color{blue}The Basic Idea}\\
+        \vspace{0.75cm}
+        \begin{huge}
           $$u(t,x) = \sum_{i=0}^N\hat{u}_i(t)\phi_i(x)$$
-        \end{Large}
+        \end{huge}
         \vspace{2cm}
       \end{center}
     \end{column}
     \vrule{}
-    \begin{column}{0.5\textwidth}
+    \begin{column}{0.05\textwidth}\end{column}
+    \begin{column}{0.45\textwidth}
       \begin{center}
-        \underline{\Large\color{red}Details}
+        \underline{\huge\color{red}Details}
       \end{center}
-      \vspace{0cm}
+      \vspace{1.2cm}
       \begin{itemize}
       \item We use \textit{Method of lines}
       \item We use \textit{pseudospectral} methods
       \item We solve the \textit{advection equation}
-        { \Large
+        { \huge
           $$\partial_t u + \partial_x (c u) = 0 $$
         }
       \end{itemize}
@@ -272,13 +273,15 @@
 
 \begin{frame}
   \frametitle{Convergence for Smooth Functions}
+  \begin{Large}
   \begin{displaymath}
     \norm{u - S_N[u]} \leq \frac{\alpha}{N^{N}}
   \end{displaymath}
+  \end{Large}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \begin{center}
-        \includegraphics[width=\textwidth]{nogibbs}
+        \includegraphics[width=0.9\textwidth]{nogibbs}
       \end{center}
     \end{column}
     \begin{column}{0.5\textwidth}
@@ -293,30 +296,32 @@
   \frametitle{Spectral Methods in Relativity}
   \setlength{\unitlength}{1cm}
   \begin{picture}(12,8)
-    \put(-0.5,0.5){\includegraphics[height=4cm]{gauge_wave_3D_slice_lowres}}
-    \put(0.,0){\small Miller and Schnetter, 2016}
-    \put(-.5,4.5){\includegraphics[height=3.5cm]{ansorg_brugmann_tichy_twopunctures}}
-    \put(4.5,7.5){\small Ansorg et al., 2004}
-    \put(5.,1.5){\includegraphics[width=7cm]{BBH_gravitational_lensing.jpg}}
-    \put(6,1.){\small Bohn et al., LIGO/VIRGO, 2015}
+    \put(-0.5,2){\includegraphics[height=6cm]{gauge_wave_3D_slice_lowres}}
+    \put(0.5,1.5){Miller and Schnetter, 2016}
+    \put(10,4.5){\includegraphics[height=3.5cm]{ansorg_brugmann_tichy_twopunctures}}
+    \put(10.5,8.){Ansorg et al., 2004}
+    \put(5.,1.5){\includegraphics[width=8cm]{BBH_gravitational_lensing.jpg}}
+    \put(7,1.){Bohn et al., LIGO/VIRGO, 2015}
   \end{picture}
 \end{frame}
 
 \begin{frame}
   \frametitle{Convergence for Non-Smooth Functions}
+  \begin{Large}
   \begin{displaymath}
     \norm{u - S_N[u]} \leq \frac{\alpha}{N^{\color{red}m}}\sum_{k=0}^{{\color{red}m}}
     \norm{f^{(k)}},\ f\in \mathcal{C}^{\color{red}m}
   \end{displaymath}
+  \end{Large}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \begin{center}
-        \includegraphics[width=\textwidth]{gibbs}
+        \includegraphics[width=0.9\textwidth]{gibbs}
       \end{center}
     \end{column}
     \begin{column}{0.5\textwidth}
       \begin{center}
-        \includegraphics[width=\textwidth]{tophat_error}
+        \includegraphics[width=0.9\textwidth]{tophat_error}
       \end{center}
     \end{column}
   \end{columns}
@@ -324,17 +329,42 @@
 
 \begin{frame}
   \frametitle{Solution: One-Sided {\color{blue}Mollifiers}}
+  \begin{large}
   \begin{eqnarray}
     {\color{blue}\Phi_{p,\delta}}*({\color{red}S_N[f]})(x) = \int {\color{blue}G(x,y)} {\color{red}S_N[f](y)}dy\nonumber\\
     \lvert {\color{blue}\Phi^d_{p_N}}*({\color{red}S_N[f]})(x) - f(x) \rvert \lesssim e ^{- \eta d N}\nonumber
   \end{eqnarray}
+  \end{large}
   \begin{center}
-    Exponential Convergence!
+    \includegraphics[width=\textwidth]{mollifiers}\\
+    {\small Based on work in Tadmor, 2002}
   \end{center}
-  \begin{center}
-    \includegraphics[width=12cm]{mollifiers}\\
-    {\small Based on work in Gelb, 1999, Tadmor, 2002}
-  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Edge Detection}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{Large}
+        \begin{displaymath}
+          \frac{\pi\sqrt{1-x^2}}{N}\sum^N_{k=1} {\color{blue}\mu\Bigg(\frac{k}{N}\Bigg)}
+          \hat{f}(k){T^\prime}_k(x) \longrightarrow {\color{red}[f](x)}
+        \end{displaymath}
+      \end{Large}
+      \vspace{0.025\textwidth}
+      \begin{center}
+        \includegraphics[width=0.9\textwidth]{minmod_good}
+      \end{center}
+      {\small Based on work in Gelb, 1999}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=0.85\textwidth]{jump_trig}\\
+        \includegraphics[width=0.85\textwidth]{jump_poly}\\
+        \includegraphics[width=0.85\textwidth]{jump_expon}\\
+      \end{center}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \backupbegin
