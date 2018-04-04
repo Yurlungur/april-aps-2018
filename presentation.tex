@@ -66,6 +66,8 @@
 \newcommand{\pdd}[1]{\frac{\partial}{\partial #1}}
 % Order operator
 \DeclareRobustCommand{\orderof}{\ensuremath{\mathcal{O}}}
+% norm
+\newcommand{\norm}[1]{\left| #1 \right|_2}
 
 % tikz
 \usepackage{tikz}
@@ -270,6 +272,9 @@
 
 \begin{frame}
   \frametitle{Convergence for Smooth Functions}
+  \begin{displaymath}
+    \norm{u - S_N[u]} \leq \frac{\alpha}{N^{N}}
+  \end{displaymath}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \begin{center}
@@ -295,6 +300,41 @@
     \put(5.,1.5){\includegraphics[width=7cm]{BBH_gravitational_lensing.jpg}}
     \put(6,1.){\small Bohn et al., LIGO/VIRGO, 2015}
   \end{picture}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Convergence for Non-Smooth Functions}
+  \begin{displaymath}
+    \norm{u - S_N[u]} \leq \frac{\alpha}{N^{\color{red}m}}\sum_{k=0}^{{\color{red}m}}
+    \norm{f^{(k)}},\ f\in \mathcal{C}^{\color{red}m}
+  \end{displaymath}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{gibbs}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=\textwidth]{tophat_error}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Solution: One-Sided {\color{blue}Mollifiers}}
+  \begin{eqnarray}
+    {\color{blue}\Phi_{p,\delta}}*({\color{red}S_N[f]})(x) = \int {\color{blue}G(x,y)} {\color{red}S_N[f](y)}dy\nonumber\\
+    \lvert {\color{blue}\Phi^d_{p_N}}*({\color{red}S_N[f]})(x) - f(x) \rvert \lesssim e ^{- \eta d N}\nonumber
+  \end{eqnarray}
+  \begin{center}
+    Exponential Convergence!
+  \end{center}
+  \begin{center}
+    \includegraphics[width=12cm]{mollifiers}\\
+    {\small Based on work in Gelb, 1999, Tadmor, 2002}
+  \end{center}
 \end{frame}
 
 \backupbegin
