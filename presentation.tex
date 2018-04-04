@@ -261,6 +261,7 @@
       \begin{itemize}
       \item We use \textit{Method of lines}
       \item We use \textit{pseudospectral} methods
+      \item We use the \textit{Chebyshev basis}
       \item We solve the \textit{advection equation}
         { \huge
           $$\partial_t u + \partial_x (c u) = 0 $$
@@ -365,6 +366,103 @@
       \end{center}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Mollified Step Function}
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{mollifiedN32_edge}
+    \end{column}
+    \begin{column}{0.7\textwidth}
+      \centering
+      \includegraphics[width=\textwidth]{mollified_unmollified}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Mollified Boxcar}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[width=\textwidth]{mollifiedN32_centre}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{mollified_pointwise_error}
+        %\includegraphics[width=\textwidth]{mollifier_convergence_boundary}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pointwise Convergence}
+  \begin{columns}
+    \begin{column}{0.35\textwidth}
+      \includegraphics[width=\textwidth]{mollifier_convergence_boundary}
+      %\includegraphics[width=\textwidth]{mollifiedN32_centre}
+    \end{column}
+    \begin{column}{0.75\textwidth}
+      \includegraphics[width=\textwidth]{mollifier_convergence_x0}
+        %\includegraphics[width=\textwidth]{mollified_pointwise_error}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Convergence Preserved in Time}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \underline{\huge\color{blue}Procedure}
+      \end{center}
+      \begin{itemize}
+      \item Use pseudospectral discretization and method of lines to
+        solve PDE
+      \item Mollify solution \textit{as postprocessing step only}
+      \item High-order convergence is achieved in time.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusions and Future Work}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+      \item Spectral methods are very powerful
+        \begin{itemize}
+        \item Exponential convergence for smooth problems
+        \item For non-smooth problems, convergence spoiled by Gibbs
+        \end{itemize}
+      \item If discontinuity locations are known, exponential
+        convergence can be recovered far from the discontinuity via
+        \textit{mollifiers}
+      \item We achieve poor convergence near the discontinuity, but
+        exponential convergence far from it.
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+      \item Open Questions:
+        \begin{itemize}
+        \item How does nonlinearity influence these results?
+        \item How do artificial atmospheres?
+        \item How to make the procedure efficient?
+        \item How robust is the procedure in multiple dimensions?
+        \end{itemize}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{1cm}
+  \begin{itemize}
+    \item For more details, see
+      {\color{blue}\href{https://arxiv.org/abs/1712.09952}{arXiv:1712.09952}}
+    \end{itemize}
 \end{frame}
 
 \backupbegin
