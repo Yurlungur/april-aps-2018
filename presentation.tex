@@ -236,7 +236,58 @@
   \titlepage
 \end{frame}
 
+\begin{frame}
+  \frametitle{Spectral Methods}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \underline{\Large\color{blue}The Basic Idea}\\
+        \vspace{1.cm}
+        \begin{Large}
+          $$u(t,x) = \sum_{i=0}^N\hat{u}_i(t)\phi_i(x)$$
+        \end{Large}
+        \vspace{2cm}
+      \end{center}
+    \end{column}
+    \vrule{}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \underline{\Large\color{red}Details}
+      \end{center}
+      \vspace{0cm}
+      \begin{itemize}
+      \item We use \textit{Method of lines}
+      \item We use \textit{pseudospectral} methods
+      \item We solve the \textit{advection equation}
+        { \Large
+          $$\partial_t u + \partial_x (c u) = 0 $$
+        }
+      \end{itemize}
+      \vspace{1cm}
+    \end{column}
+  \end{columns}
+\end{frame}
 
+% \begin{frame}
+%   \frametitle{Spectral Methods}
+%   \setlength{\unitlength}{1cm}
+%   \begin{picture}(12,8)
+%     \put(6,0){\line(0,1){7.75}}
+%     \put(1,7.2){\Large\color{blue}The Basic Idea}
+%     \put(8,7.2){\Large\color{red}Details}
+%     \put(0,7){\line(1,0){12}}
+%     \put(0.1,4){
+%       \Large
+%       $u(t,x) = \sum_{i=0}^N\hat{u}_i(t)\phi_i(x)$
+%     }
+%     \put(6.5,4){
+%       \begin{itemize}
+%       \item We use \textit{Method of lines}
+%       \item We use \textit{pseudospectral} methods
+%       \end{itemize}
+%     }
+%   \end{picture}
+% \end{frame}
 
 \backupbegin
 
