@@ -246,7 +246,7 @@
         \underline{\huge\color{blue}The Basic Idea}\\
         \vspace{0.75cm}
         \begin{huge}
-          $$u(t,x) = \sum_{i=0}^N\hat{u}_i(t)\phi_i(x)$$
+          $$u({\color{red}t},{\color{blue}x}) = \sum_{i=0}^N{\color{red}\hat{u}_i(t)}{\color{blue}\phi_i(x)}$$
         \end{huge}
         \vspace{2cm}
       \end{center}
@@ -297,12 +297,14 @@
   \frametitle{Spectral Methods in Relativity}
   \setlength{\unitlength}{1cm}
   \begin{picture}(12,8)
-    \put(-0.5,2){\includegraphics[height=6cm]{gauge_wave_3D_slice_lowres}}
-    \put(0.5,1.5){Miller and Schnetter, 2016}
+    \put(4.5,0.75){\includegraphics[width=7cm]{spec-domain-decomp}}
+    \put(11.5,1.00){Kidder et al., 2000}
+    \put(-0.75,1.2){\includegraphics[height=4cm]{gauge_wave_3D_slice_lowres}}
+    \put(0.,1.0){Miller and Schnetter, 2016}
     \put(10,4.5){\includegraphics[height=3.5cm]{ansorg_brugmann_tichy_twopunctures}}
     \put(10.5,8.){Ansorg et al., 2004}
-    \put(5.,1.5){\includegraphics[width=8cm]{BBH_gravitational_lensing.jpg}}
-    \put(7,1.){Bohn et al., LIGO/VIRGO, 2015}
+    \put(3.,3.5){\includegraphics[clip,trim={10cm 0 10cm 0},width=4cm]{BBH_gravitational_lensing.jpg}}
+    \put(0.5,7.5){Bohn et al., 2015}
   \end{picture}
 \end{frame}
 
@@ -424,7 +426,9 @@
       \end{itemize}
     \end{column}
     \begin{column}{0.5\textwidth}
-      
+      \includegraphics[height=0.95\textheight]{movie/frame_0001}
+      % \animategraphics[height=0.95\textheight,every=7,autoplay,loop]
+      % {7}{movie/frame_}{0001}{2000}
     \end{column}
   \end{columns}
 \end{frame}
