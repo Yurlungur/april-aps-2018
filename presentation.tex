@@ -10,7 +10,7 @@
 % Just the theme to use. Should be built into bemaer. Setting the
 % height gets rid of a whole lot of whitespace
 %\usetheme[height=7mm]{Rochester}
-\usetheme[myclass=LA-UR-XX-XXXXX,height=7mm,]{LANL-beta}
+\usetheme[myclass=LA-UR-18-22923,height=7mm,]{LANL-beta}
 \usefonttheme{serif}
 % Usually beamer gives you navigation hyperlinks on the bottom
 % right. I turned this off. It's annoying.
@@ -225,7 +225,7 @@
 \institute[LANL]{\color{blue}Los Alamos National Laboratory}
 
 \date[April APS]{\color{black}April APS, 2018}
-\LAUR{LA-UR-XX-XXXXX}
+\LAUR{LA-UR-18-22923}
 % ----------------------------------------------------------------------
 
 
@@ -345,32 +345,6 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Edge Detection}
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-      \begin{Large}
-        \begin{displaymath}
-          \frac{\pi\sqrt{1-x^2}}{N}\sum^N_{k=1} {\color{blue}\mu\Bigg(\frac{k}{N}\Bigg)}
-          \hat{f}(k){T^\prime}_k(x) \longrightarrow {\color{red}[f](x)}
-        \end{displaymath}
-      \end{Large}
-      \vspace{0.025\textwidth}
-      \begin{center}
-        \includegraphics[width=0.9\textwidth]{minmod_good}
-      \end{center}
-      {\small Based on work in Gelb, 1999}
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      \begin{center}
-        \includegraphics[width=0.85\textwidth]{jump_trig}\\
-        \includegraphics[width=0.85\textwidth]{jump_poly}\\
-        \includegraphics[width=0.85\textwidth]{jump_expon}\\
-      \end{center}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}
   \frametitle{Mollified Step Function}
   \begin{columns}
     \begin{column}{0.4\textwidth}
@@ -470,6 +444,32 @@
 \end{frame}
 
 \backupbegin
+
+\begin{frame}
+  \frametitle{Edge Detection}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{Large}
+        \begin{displaymath}
+          \frac{\pi\sqrt{1-x^2}}{N}\sum^N_{k=1} {\color{blue}\mu\Bigg(\frac{k}{N}\Bigg)}
+          \hat{f}(k){T^\prime}_k(x) \longrightarrow {\color{red}[f](x)}
+        \end{displaymath}
+      \end{Large}
+      \vspace{0.025\textwidth}
+      \begin{center}
+        \includegraphics[width=0.9\textwidth]{minmod_good}
+      \end{center}
+      {\small Based on work in Gelb, 1999}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \includegraphics[width=0.85\textwidth]{jump_trig}\\
+        \includegraphics[width=0.85\textwidth]{jump_poly}\\
+        \includegraphics[width=0.85\textwidth]{jump_expon}\\
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
 
 \backupend
 
