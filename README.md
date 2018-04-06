@@ -18,3 +18,11 @@ Modified ArXiv license:
 - We grant non-exclusive right for github to distribute this article via, for example, forks and clones.
 - We **do not** grant the right for users to redistribute this work.
 - We **do not** grant the right for any profit to be made from this work.
+
+# Building the Slides
+
+```bash
+git clone https://github.com/Yurlungur/april-aps-2018.git
+cd april-aps-2018
+make
+```
